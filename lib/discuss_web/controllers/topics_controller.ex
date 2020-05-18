@@ -5,6 +5,9 @@ defmodule DiscussWeb.TopicsController do
   alias Discuss.TEntries.Topics
 
   def index(conn, _params) do
+    IO.puts "+++++++++++"
+    IO.inspect(conn.assigns)
+    IO.puts "+++++++++++"
     topic = TEntries.list_topic()
     render(conn, "index.html", topic: topic)
   end
